@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -10,34 +9,6 @@ function App() {
       title: "Smart Room PIR Sensor",
       description: "LoRaWAN® connected Home and Office Environment Monitoring",
       type: "sensor",
-    },
-    {
-      id: 2,
-      logo: "https://tektelic.com/uploads/product/Devices-Website-Scale/smart-room-sensor-3.png",
-      title: "Smart Room Base Sensor",
-      description: "LoRaWAN® connected Home and Office Environment Monitoring",
-      type: "sensor"
-    },
-    {
-      id: 3,
-      logo: "https://tektelic.com/uploads/product/CO2_ISO-3.svg",
-      title: "Smart Room CO2",
-      description: "LoRaWAN® connected Indoor Ambient Environment Monitoring",
-      type: "sensor"
-    },
-    {
-      id: 4,
-      logo: "https://tektelic.com/uploads/product/Devices-Website-Scale/Micro.png",
-      title: "KONA Micro Gateway",
-      description: "Enterprise LoRaWAN® Gateway for Mission Critical Deployments",
-      type: "gateway"
-    },
-    {
-      id: 5,
-      logo: "https://tektelic.com/uploads/product/KONA-Enterprise-new-2-3.svg",
-      title: "KONA Enterprise Gateway",
-      description: "Highly Optimized Cost-Effective Gateway for Enterprise Deployments",
-      type: "gateway"
     }
   ];
   const [products, setProducts] = useState(initialProducts);
@@ -60,24 +31,27 @@ function App() {
           <div className="sidebar-block">
             <div className="sidebar-item sidebar-item--bold">Product type</div>
             <div className="sidebar-item">
-              <label><input className="checkbox" type="checkbox" id="type" name="gateway" checked={false} onChange={() => {}}/>Gateways</label>
+              <label><input className="checkbox" type="checkbox" id="type" name="gateway" checked={false}
+                            onChange={() => {
+                            }}/>Gateways</label>
             </div>
             <div className="sidebar-item">
-              <label><input className="checkbox" type="checkbox" id="type" name="sensors" checked={false} onChange={() => {}}/>Sensors</label>
+              <label><input className="checkbox" type="checkbox" id="type" name="sensors" checked={false}
+                            onChange={() => {
+                            }}/>Sensors</label>
             </div>
           </div>
         </div>
         <div className="page-content">
-          {products.map(product => (
-            <div key={product.id} className="device">
-              <div className="device-logo">
-                <img className="device-logo-img" src={product.logo}/>
-              </div>
-              <div className="device-title">{product.title}</div>
-              <div className="device-description">{product.description}</div>
-              <div className="wishlist-icon wishlist-icon--active" onClick={() => {}}/>
+          <div key={products[0].id} className="device">
+            <div className="device-logo">
+              <img className="device-logo-img" src={products[0].logo}/>
             </div>
-          ))}
+            <div className="device-title">{products[0].title}</div>
+            <div className="device-description">{products[0].description}</div>
+            <div className="wishlist-icon wishlist-icon--active" onClick={() => {
+            }}/>
+          </div>
           <div className="wishlisted">
             <div className="wishlisted-title">Wishlisted</div>
             <div className="wishlisted-items">
